@@ -1,0 +1,8 @@
+package pl.edu.amu.bawjs.design.abstract_factory;
+
+public interface AbstractFactory
+{
+    ProductA createProductA();
+
+    ProductB createProductB();
+}

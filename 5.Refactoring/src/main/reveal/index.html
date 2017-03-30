@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../../0.Reveal/build/reveal/css/print/pdf.css' : '../../../../0.Reveal/build/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+
+
+
+
+
+
+
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../../../../0.Reveal/build/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Budowa aplikacji w środowisku Java</h1>
+            <h3>Refaktoryzacja</h3>
+        </section>
+
+        <section>
+            <section>
+                <h2>Code-smell</h2>
+                <blockquote cite="https://en.wikipedia.org/wiki/Code_smell">
+                    Bad smell in computer programming code, refers to any symptom in the source code of a
+                    program that possibly indicates a deeper problem.
+                </blockquote>
+            </section>
+            <section>
+                <h2>Poziom aplikacji</h2>
+                <ul>
+                    <li>Duplikacja kodu</li>
+                    <li>Overengineering</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Poziom klasy</h2>
+                <ul>
+                    <li>Large class</li>
+                    <li>Feature envy</li>
+                    <li>Inappropriate intimacy</li>
+                    <li>Refused bequest</li>
+                    <li>Lazy class</li>
+                    <li>Excessive use of literals</li>
+                    <li>Cyclomatic Complexity</li>
+                    <li>Downcasting</li>
+                    <li>Orphan Variable or Constant class</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Poziom metody</h2>
+                <ul>
+                    <li>Too many parameters</li>
+                    <li>Long method</li>
+                    <li>Excessively long identifiers</li>
+                    <li>Excessively short identifiers</li>
+                    <li>Excessive return of data</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Refaktoryzacja</h2>
+                <blockquote cite="https://en.wikipedia.org/wiki/Code_refactoring">
+                    Code refactoring is the process of restructuring existing computer code – changing the
+                    factoring – without changing its external behavior.
+                </blockquote>
+            </section>
+            <section>
+                <h2>Zalety refaktoryzacji</h2>
+                <ul>
+                    <li>Utrzymanie</li>
+                    <li>Rozszerzalność</li>
+                    <li>Modułowość</li>
+                    <li>Czytelność</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Wady refaktoryzacji</h2>
+                <ul>
+                    <li>Koszt</li>
+                    <li>Potencjalnie - nowe błędy</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Przykładowe przekształcenia</h2>
+                <ul>
+                    <li>Method rename</li>
+                    <li>Variable/field rename</li>
+                    <li>Add/Remove parameter</li>
+                    <li>Inline Method</li>
+                    <li>Introduce Builder</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Extract method</h2>
+<pre><code class="java">
+    public void method(int count)
+    {
+    String result = "";
+    for(int i=0; i&lt;count; i++){
+    result += "a";
+    }
+    result += "10";
+    }
+</code></pre>
+<pre><code class="java">
+    public void method(int count) {
+    String result = "";
+    result = costructA(count);
+    result += "10";
+    }
+    public void constrctA(int count){
+    String tmp = "";
+    for(int i=0; i&lt;count; i++){
+    tmp += "a";
+    }
+    return tmp;
+    }
+</code></pre>
+            </section>
+            <section>
+                <h2>Refactoring w IntelliJ Idea</h2>
+                <img src="Refactoring.png">
+            </section>
+            <section>
+                <h2>Method rename</h2>
+<pre><code class="java">
+    public void methodA()
+    {
+    }
+</code></pre>
+<pre><code class="java">
+    public void methodB()
+    {
+    }
+</code></pre>
+            </section>
+        </section>
+        <section>
+            <h2>Bibliografia</h2>
+            <ul>
+                <li>Clean Code: A Handbook of Agile Software Craftsmanship; Martin Robert C. (Uncle Bob)</li>
+                <li>Effective Java; Joshua Bloch</li>
+                <li>https://sourcemaking.com</li>
+            </ul>
+        </section>
+
+    </div>
+</div>
+<script src="../../../../0.Reveal/build/reveal/lib/js/head.min.js"></script>
+<script src="../../../../0.Reveal/build/reveal/js/reveal.js"></script>
+
+<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../../../../0.Reveal/build/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

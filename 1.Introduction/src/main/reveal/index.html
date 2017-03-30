@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../../0.Reveal/build/reveal/css/print/pdf.css' : '../../../../0.Reveal/build/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../../../../0.Reveal/build/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Budowa aplikacji w środowisku Java</h1>
+            <h3>Wprowadzenie</h3>
+        </section>
+        <section>
+            <section>
+                <h2>Programowanie strukturalne imperatywne proceduralne</h2>
+                <ul>
+                    <li>Ciąg instrukcji zmieniających stan programu</li>
+                    <li>Instrukcje podzielone są na bloki</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Języki programowania: </h3>
+                <ul>
+                    <li>Java</li>
+                    <li>C/C++</li>
+                    <li>PHP</li>
+                    <li>Perl</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Programowanie obiektowe</h2>
+                <ul>
+                    <li>Abstrakcja</li>
+                    <li>Hermetyzacja</li>
+                    <li>Dziedziczenie</li>
+                    <li>Polimorfizm</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Abstrakcja</h2>
+                <blockquote>
+                    The essence of abstractions is preserving information that is relevant in a given context,
+                    and forgetting information that is irrelevant in that context.
+                </blockquote>
+            </section>
+            <section>
+                <h2>Hermetyzacja</h2>
+                <blockquote>
+                    <ul>
+                        <li>
+                            A language mechanism for restricting access to some of the object's components.
+                        </li>
+                        <li>
+                            A language construct that facilitates the bundling of data with the methods (or
+                            other
+                            functions) operating on that data.
+                        </li>
+                    </ul>
+                </blockquote>
+            </section>
+            <section>
+                <h2>Dziedziczenie</h2>
+                <blockquote>
+                    The inheritance is a mechanism in which one object acquires all the properties and
+                    behaviors of parent object.
+                </blockquote>
+            </section>
+            <section>
+                <h2>Polimorfizm</h2>
+                <blockquote>
+                    Polymorphism is a concept by which we can perform a single action by different ways.
+                </blockquote>
+                <ul>
+                    <li>Runtime polymorphism</li>
+                    <li>Compile-time polymorphism</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Języki programowania: </h3>
+                <ul>
+                    <li>Smalltalk</li>
+                    <li>Java</li>
+                    <li>Ruby</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h3>Typy aplikacji</h3>
+            <ul>
+                <li>Standalone</li>
+                <li>Web</li>
+                <li>Enterprise</li>
+                <li>Mobile</li>
+                <li>Android</li>
+            </ul>
+        </section>
+        <section>
+            <h3>GIT</h3>
+            https://try.github.io
+            http://pcottle.github.io/learnGitBranching/
+        </section>
+
+        <section>
+            <section>
+                <h2>Software Development Principles</h2>
+            </section>
+            <section>
+                <h2>SOLID</h2>
+            </section>
+            <section>
+                S - Single responsibility principle
+                <blockquote>
+                    a class should have only a single responsibility (i.e. only one potential change in the
+                    software's specification should be able to affect the specification of the class)
+                </blockquote>
+            </section>
+            <section>
+                O - Open/closed principle
+                <blockquote>software entities should be open for extension, but closed for modification.
+                </blockquote>
+            </section>
+            <section>
+                L - Liskov substitution principle
+                <blockquote>objects in a program should be replaceable with instances of their subtypes
+                    without altering the correctness of that program
+                </blockquote>
+            </section>
+            <section>
+                I - Interface segregation principle
+                <blockquote>many client-specific interfaces are better than one general-purpose interface
+                </blockquote>
+            </section>
+            <section>
+                D - Dependency inversion principle
+                <blockquote>one should "Depend upon Abstractions. Do not depend upon concretions."
+                </blockquote>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Wzorce projektowe</h2>
+            </section>
+            <section>
+                <h2>Systematyka</h2>
+                <ul>
+                    <li>Kreacyjne</li>
+                    <li>Strukturalne</li>
+                    <li>Behawioralne</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Kreacyjne</h2>
+                <ul>
+                    <li>Singleton</li>
+                    <li>Builder</li>
+                    <li>Abstract factory</li>
+                    <li>Factory method</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Strukturalne</h2>
+                <ul>
+                    <li>Adapter</li>
+                    <li>Decorator</li>
+                    <li>Composite</li>
+                    <li>Bridge</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Behawioralne</h2>
+                <ul>
+                    <li>Listener/Observer</li>
+                    <li>Strategy</li>
+                    <li>Command</li>
+                    <li>State</li>
+                    <li>Template method</li>
+                    <li>State</li>
+                    <li>Memento</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Jak będziemy pracować?</h2>
+            </section>
+            <section>
+                <h2>IDE</h2>
+                <h3>IntelliJ Idea</h3>
+            </section>
+            <section>
+                <h2>VCS</h2>
+                <h3>GIT on BitBucket</h3>
+            </section>
+            <section>
+                <h2>Getting started</h2>
+                <ul>
+                    <li>Załóż konto na Bitbucket</li>
+                    <li>Wyślij mi swój login na @ - dodam Cię do projektu</li>
+                    <li>Sforkuj mój projekt</li>
+                    <li>Dodaj mnie ( mikebocian ) do projektu</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2>Bibliografia</h2>
+            <ul>
+                <li>Agile Software Development: Principles, Patterns, and Practices; Robert C. Martin</li>
+                <li>Design Patterns; Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</li>
+            </ul>
+        </section>
+    </div>
+</div>
+<script src="../../../../0.Reveal/build/reveal/lib/js/head.min.js"></script>
+<script src="../../../../0.Reveal/build/reveal/js/reveal.js"></script>
+
+<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../../../../0.Reveal/build/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/css/reveal.css">
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../../../../0.Reveal/build/reveal/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../../../0.Reveal/build/reveal/css/print/pdf.css' : '../../../../0.Reveal/build/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+
+
+
+
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../../../../0.Reveal/build/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Budowa aplikacji w środowisku Java</h1>
+            <h3>Testowanie oprogramowania</h3>
+        </section>
+
+        <section>
+            <section>
+                <h2>Metody testowania</h2>
+                <ul>
+                    <li>Statyczne</li>
+                    <li>Dynamiczne</li>
+                    <li>Wizualne</li>
+                    <li>Czarna skrzynka</li>
+                    <li>Biała skrzynka</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Statyczne</h2>
+                <ul>
+                    <li>Statyczna analiza kodu</li>
+                    <li>Przeglądy kodu</li>
+                    <li>Metody formalne</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Dynamiczne</h2>
+                <ul>
+                    <li>Wymaga uruchomienia programu</li>
+                    <li>Wymaga przypadów testowych</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Czarna skrzynka</h2>
+                <ul>
+                    <li>Brak wiedzy o wnętrznościach aplikacji</li>
+                    <li>Testowanie zadeklarowanych funkcjonalności</li>
+                </ul>
+                <blockquote cite="https://en.wikipedia.org/wiki/Black-box_testing">
+                    Black-box testing is a method of software testing that examines the functionality of an
+                    application without peering into its internal structures or workings.
+                </blockquote>
+
+            </section>
+            <section>
+                <h2>Biała skrzynka</h2>
+                <ul>
+                    <li>Wiedza o wnętrznościach aplikacji</li>
+                    <li>Testowanie mniejszych, wewnętrznych modułów</li>
+                </ul>
+                <blockquote cite="https://en.wikipedia.org/wiki/White-box_testing">White-box testing is a
+                    method of testing software that tests internal structures or workings of an
+                    application.
+                </blockquote>
+
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Poziomy testowania</h2>
+                <ul>
+                    <li>Jednostkowe</li>
+                    <li>Integracyjne</li>
+                    <li>Systemowe</li>
+                    <li>Akceptacyjne</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Jednostkowe</h2>
+                <ul>
+                    <li>Czas wykonania wykonania: natychmiastowe</li>
+                    <li>Automatyzacja: tak</li>
+                    <li>Pokrycie: funkcja/procedura</li>
+                    <li>Co testujemy?</li>
+                    <ul>
+                        <li>Analiza ścieżek</li>
+                        <li>Wartości brzegowe</li>
+                        <li>Klasy równoważności</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>Integracyjne</h2>
+                <ul>
+                    <li>Czas wykonania wykonania: krótkie</li>
+                    <li>Automatyzacja: tak</li>
+                    <li>Pokrycie: komunikacja międzymodułowa</li>
+                    <li>Co testujemy?</li>
+                    <ul>
+                        <li>Integracja między wartwami aplikacji</li>
+                        <li>Integracja między modułami aplikacji</li>
+                        <li>Integracja między systemami zewnętrznymi</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>Systemowe</h2>
+                <ul>
+                    <li>Czas wykonania wykonania: długi</li>
+                    <li>Automatyzacja: nie/tak</li>
+                    <li>Pokrycie: całość systemu</li>
+                    <li>Co testujemy?</li>
+                    <ul>
+                        <li>Wymagania funkcjonalne</li>
+                        <li>Wymagania pozafunkcjonalne</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>Akceptacyjne</h2>
+                <ul>
+                    <li>Czas wykonania wykonania: długi</li>
+                    <li>Automatyzacja: nie</li>
+                    <li>Pokrycie: całość systemu</li>
+                    <li>Co testujemy?</li>
+                    <ul>
+                        <li>Wymagania funkcjonalne</li>
+                        <li>Wymagania pozafunkcjonalne</li>
+                    </ul>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Typy testowania</h2>
+                <ul>
+                    <li>Funkcjonalne</li>
+                    <li>Pozafunkcjonalne</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Funkcjonalne</h2>
+                <ul>
+                    <li>Sprawdzanie czy wymagania są spełnione</li>
+                    <li>Często wykonywane przez osoby nietechniczne</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Pozafunkcjonalne</h2>
+                <ul>
+                    <li>Testy obciążeniowe (stress)</li>
+                    <li>Testy wydajnościowe (load)</li>
+                    <li>Testy bezpieczeństwa</li>
+                    <li>Testy ergonomii</li>
+                    <li>Testy instalacji</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>JUnit</h2>
+            </section>
+            <section>
+                <h2>Minimalny test</h2>
+               <pre><code class="java">
+import org.junit.Test;
+
+public class Test
+{
+    @Test
+    public void method()
+    {
+    }
+}
+               </code></pre>
+            </section>
+            <section>
+                <h2>Nazwa metody</h2>
+               <pre><code class="java">
+import org.junit.Test;
+
+public class Test
+{
+    @Test
+    public void shouldCreateUser()
+    {
+        User u = UserFactory.createUser();
+        Assert.assertNotNull(u);
+    }
+}
+               </code></pre>
+            </section>
+            <section>
+                <h2>Asercje</h2>
+               <pre><code class="java">
+import org.junit.Assert;
+
+Assert.assertTrue(boolean actual);
+Assert.assertFalse(boolean actual);
+Assert.assertNotNull(Object actual);
+Assert.assertEquals(<> expected, <> actual);
+Assert.assertEquals(double expected, double actual, double delta);
+               </code></pre>
+            </section>
+            <section>
+                <h2>Adnotacje</h2>
+               <pre><code class="java">
+                   @Test
+               </code></pre>
+               <pre><code class="java">
+                   @Before
+                   @After
+               </code></pre>
+               <pre><code class="java">
+                   @BeforeClass
+                   @AfterClass
+               </code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Mockito</h2>
+            </section>
+            <section>
+                <h2>Mockowanie</h2>
+               <pre><code class="java">
+import org.junit.Assert;
+import org.junit.Test;
+import org.mockito.Mockito;
+
+import java.util.List;
+
+public class MockitoTest {
+
+    @Test
+    public void shouldMockedListReturnSizeOf2() {
+        List list = Mockito.mock( List.class);
+        Mockito.when( list.size() ).thenReturn( 2 );
+        Assert.assertEquals( 2,list.size() );
+    }
+}
+               </code></pre>
+            </section>
+            <section>
+                <h2>Nagrywanie</h2>
+               <pre><code class="java">
+import org.junit.Assert;
+import org.junit.Test;
+import org.mockito.Mockito;
+
+import java.util.List;
+
+public class MockitoTest {
+
+    @Test
+    public void shouldMockedListReturnSizeOf2() {
+        List list = Mockito.mock( List.class);
+        Mockito.when( list.size() ).thenReturn( 2 );
+        Assert.assertEquals( 2,list.size() );
+    }
+}
+               </code></pre>
+            </section>
+            <section>
+                <h2>Rzucanie wyjątków</h2>
+               <pre><code class="java">
+@Test( expected = IndexOutOfBoundsException.class )
+public void shouldThrowPreviouslyRecordedException(){
+    List list = Mockito.mock( List.class );
+    Mockito .when( list.get( 9 ) )
+        .thenThrow( IndexOutOfBoundsException.class );
+    try {
+        list.get( 0 );
+    }catch( IndexOutOfBoundsException e ){
+        Assert.fail();
+    }
+    list.get( 9 );
+}
+               </code></pre>
+            </section>
+            <section>
+                <h2>Sprawdzanie wykonania</h2>
+               <pre><code class="java">
+@Test
+public void shouldVerifyIfTheMethodWasCalled()
+{
+    Runnable runnable = Mockito.mock( Runnable.class );
+    runnable.run();
+    Mockito.verify( runnable, Mockito.times( 1 ) ).run();
+}
+               </code></pre>
+            </section>
+            <section>
+                <h2>Szpiegowanie obiektów</h2>
+               <pre><code class="java">
+@Test
+public void shouldVerifyIfTheMethodWasCalled()
+{
+    List&lt;String&gt; list = new ArrayList<>();
+    List&lt;String&gt; spyList = Mockito.spy( list );
+    spyList.add( "test" );
+
+    Mockito.verify( spyList ).add( Mockito.anyString() );
+}
+               </code></pre>
+            </section>
+            <section>
+                <h2>Dobre praktyki</h2>
+                <ul>
+                    <li>Do not mock types you don’t own</li>
+                    <li>Don’t mock value objects</li>
+                    <li>Don’t mock everything</li>
+                    <li>Show love with your tests!</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Do następnych zajęć (środa, 23:59)</h2>
+            </section>
+            <section>
+                <h2>Uzupełnij testy</h2>
+                <ul>
+                    <li>Napisz testy do 2.Unit_tests</li>
+                    <li>Napisz testy do 3.Mockito_tests</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2>Bibliografia</h2>
+            <ul>
+                <li>Test Driven Development: By Example; Kent Beck</li>
+                <li>Extreme Programming Explained: Embrace Change; Kent Beck</li>
+                <li>The Pragmatic Programmer: From Journeyman to Master; David Thomas, Andrew Hunt</li>
+            </ul>
+        </section>
+
+
+    </div>
+</div>
+<script src="../../../../0.Reveal/build/reveal/lib/js/head.min.js"></script>
+<script src="../../../../0.Reveal/build/reveal/js/reveal.js"></script>
+
+<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../../../../0.Reveal/build/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../../../0.Reveal/build/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+
+
+
+
+</script>
+
+</body>
+</html>
